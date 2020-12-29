@@ -29,8 +29,15 @@ public class SnakeAndLadder {
 	private static void ladder(int dieResult) {
                 System.out.println("laddderMethod before - currentPosition:"+currentPosition);
                 currentPosition = currentPosition + dieResult;
+		if (currentPosition > 100)
+                {
+                        currentPosition = currentPosition - dieResult;
+                }
+                if(currentPosition == 100)
+                {
+                        System.out.println("*** ladder Completed *****");
+                }
         	System.out.println("ladderMethod after - currentPosition:"+currentPosition);
-		
 	}
 
         private static void snake(int dieResult) {
